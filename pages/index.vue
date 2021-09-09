@@ -12,7 +12,7 @@
         <ul class="flex flex-wrap gap-4">
           <li v-for="filme of listaDeFilmes" :key="filme.id">
             <img
-              v-bind:src="'http://image.tmdb.org/t/p/w500/' + filme.poster_path"
+              :src="'http://image.tmdb.org/t/p/w500/' + filme.poster_path"
               width="160px"
             />
             <div
@@ -33,12 +33,9 @@
                 {{ filme.vote_average }}
               </div>
             </div>
-            <input
-              
-              type="button"
-              class="bg-yellow-500 text-gray-100 w-40 text-sm p-1.5 mt-2"
-              value="Adicionar aos favoritos"
-            />
+            <button class="bg-yellow-500 text-gray-100 w-40 text-sm p-1.5 mt-2">
+              Adicionar aos favoritos
+            </button>
           </li>
         </ul>
       </div>
@@ -49,10 +46,8 @@
   </div>
 </template>
 
-
-
 <script>
-import Filmes from "../../services/filmes.js";
+import Filmes from "../services/filmes";
 
 export default {
   data() {
